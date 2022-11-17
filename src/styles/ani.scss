@@ -1,0 +1,51 @@
+@import "var";
+
+@keyframes joinBarShow {
+  100% {
+    height: 5%;
+    background-color: #EEEEEE;
+    color: $main-color;
+  }
+}
+
+@keyframes profileShow {
+  100% {
+    left: 5%;
+  }
+}
+
+@keyframes heartMove {
+  @for $ptr from 1 through 10 {
+    #{10 * $ptr}% {
+      @if $ptr%2==0 {
+        rotate: 15deg;
+      } @else {
+        rotate: -15deg;
+      }
+    }
+  }
+}
+
+@keyframes placeShow {
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes placePageShow {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes btnReserveShow {
+  100% {
+    bottom: 5vh;
+  }
+}
+
+@keyframes ticketListShow {
+  100% {
+    left: 5%;
+  }
+}

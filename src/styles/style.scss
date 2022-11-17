@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#communityPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 1;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .communityHeader {
+    width: 100vw;
+    height: 25vh;
+    border-bottom: 2px solid rgba(black, .1);
+
+    .userMenu {
+      width: 100%;
+      height: 60%;
+      background-color: #FC5230;
+    }
+
+    .communityMenu {
+      width: 100%;
+      height: 40%;
+      background-color: white;
+
+      .inner {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .communityNav {
+          width: 30%;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          list-style: none;
+
+          li {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.active {
+              font-weight: 700;
+              color: #FC5230;
+            }
+          }
+        }
+
+        .communityBtnBox {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 20%;
+          height: 100%;
+
+          .btn {
+            width: 45%;
+            height: 50%;
+            border: none;
+            cursor: pointer;
+            color: white;
+            transition: .1s;
+            background-color: #EFEFEF;
+            color: black;
+
+            &.btnEdit {
+              background-color: #FC5230;
+              color: white;
+            }
+
+            &:hover {
+              background-color: rgba(#FC5230, .9);
+              scale: 1.01;
+            }
+
+            &:active {
+              scale: .99;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .communityIntro {
+    width: 100vw;
+    height: 45vh;
+    background-color: #EFEFEF;
+
+    .inner {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .hotPosts {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .hotPostEl {
+          width: 40%;
+          height: 80%;
+          background-color: #FC5230;
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            .hotPostInfo {
+              height: 100%;
+            }
+          }
+
+          .hotPostInfo {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background-color: #282c34;
+            transition: .5s;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .profile {
+        width: 30%;
+        height: 90%;
+        background-color: white;
+        position: relative;
+
+
+        .profileImage {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background-color: greenyellow;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          z-index: 1;
+        }
+
+        .profileMenu {
+          position: absolute;
+          bottom: 0;
+          background-color: #FC5230;
+          height: 50%;
+          width: 100%;
+
+          .btnMy {
+            width: 50%;
+            height: 30%;
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: #EFEFEF;
+            border: none;
+            cursor: pointer;
+            transition: .1s;
+            font-weight: 700;
+
+            &:hover {
+              color: #FC5230;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .communityMain {
+    width: 100vw;
+    height: 200vh;
+    list-style: none;
+
+    .inner {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .postEl {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+          border-left: 10px solid #FC5230;
+        }
+
+        .postInfo {
+          width: 60vw;
+          height: 12vw;
+
+          .infoTop {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            align-items: center;
+
+            .profileImage {
+              width: 3vw;
+              height: 3vw;
+              border-radius: 50%;
+              background-color: black;
+            }
+
+            .profileInfo {
+              width: 15%;
+              height: 100%;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+
+              .editName {
+                font-size: 14px;
+              }
+
+              .editDate {
+                font-size: 10px;
+                font-weight: 300;
+              }
+            }
+          }
+
+          .infoBody {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+
+            .editTitle {
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+            .editSub {
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+
+          .infoFooter {
+            width: 10%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: rgba(black, .4);
+
+          }
+        }
+
+        .postImage {
+          width: 12vw;
+          height: 12vw;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+
+.editPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(black, .4);
+  position: fixed;
+  z-index: 2;
+
+  .editForm {
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+
+    .inner {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .inputBox {
+      width: 100%;
+      height: 20%;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      label {
+        position: absolute;
+        transition: .2s;
+
+        &.active {
+          left: 0;
+          top: 15%;
+          font-size: 10px;
+          color: #FC5230;
+        }
+      }
+
+      #inputTitle {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+
+        &.active {
+          border-color: #FC5230;
+          border-width: 1.5px;
+        }
+      }
+    }
+  }
+
+  .postText {
+    width: 100%;
+    height: 60%;
+    border: 1px solid black;
+    outline: none;
+    resize: none;
+    padding: 2%;
+  }
+
+  .btnBox {
+    margin: 0 auto;
+    width: 70%;
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    > button {
+      width: 40%;
+      height: 50%;
+      border: none;
+      cursor: pointer;
+
+      &.btnApply {
+        background-color: #FC5230;
+        color: white;
+      }
+    }
+  }
+}
+
+.postPage {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  background-color: white;
+
+  .postLeft {
+    width: 60%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner {
+      width: 90%;
+      height: 90%;
+
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      .editor {
+        width: 25%;
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+
+        .editorImage {
+          width: 50px;
+          height: 50px;
+          background-color: black;
+          border-radius: 50%;
+        }
+
+        .editorInfo {
+          text-align: left;
+
+          .name {
+
+          }
+
+          .date {
+            font-weight: 300;
+          }
+        }
+      }
+
+      .postContent {
+        width: 100%;
+        height: 65%;
+        background-color: black;
+      }
+    }
+  }
+
+  .postRight {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner {
+      width: 95%;
+      height: 95%;
+      background-color: white;
+
+      .btnClose {
+        font-size: 40px;
+        cursor: pointer;
+        width: 100%;
+        text-align: right;
+
+        &:hover {
+          font-weight: 500;
+        }
+      }
+      .commentBox{
+        width: 100%;
+        height: 92%;
+        background-color: #FC5230;
+
+      }
+    }
+  }
+}

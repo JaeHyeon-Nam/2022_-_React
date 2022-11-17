@@ -1,0 +1,105 @@
+$color-grey: #bbb;
+$color-dark-grey: #444;
+$color-violet: #001A95;
+$color-white: #fff;
+$color-red: #f00;
+$font-size-default: 14px;
+
+.search-wrapper {
+  margin: 25px 0vw;
+  max-width: 700px;
+  // justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  .search-form {
+    display: flex;
+    flex-direction: row;
+  }
+  label {
+    font-size: $font-size-default;
+    display: block;
+    text-align: left;
+  }
+  input, button {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: $font-size-default;
+    outline: none;
+    border: 1px solid $color-grey;
+  }
+  input {
+    width: 100%;
+    &.error {
+      border-color: $color-red;
+    }
+  }
+  .form-field {
+    flex: 0.25;
+    margin: 5px 10px;
+    &:first-child {
+      flex: 0.75;
+      margin-right: 20px;
+    }
+    &.align-end {
+      align-self: flex-end;
+    }
+    &.align-center {
+      margin: 0px 10px;
+      align-self: center;
+    }
+    .field-error {
+      text-align: left;
+      color: $color-red;
+      font-size: $font-size-default;
+    }
+  }
+  button {
+    padding: 10px 20px;
+    cursor: pointer;
+    float: right;
+    border-color: $color-violet;
+    color: $color-violet;
+    background-color: $color-white; 
+    &:disabled {
+      cursor: default;
+      background: $color-grey;
+      border-color: $color-grey;
+      color: $color-dark-grey;
+    }
+  }
+  .popup {
+    border-radius: 5px;
+    border: 1px solid $color-grey;
+    box-shadow: 0 0 10px $color-grey;
+    margin: 20px 4px;
+    text-align: left;
+    .popup-header {
+      background: $color-violet;
+      color: $color-white;
+      padding: 15px;
+      border-radius: 5px 5px 0 0;
+      text-transform: uppercase;
+    }
+    .popup-body {
+      padding: 5px 15px;
+      div {
+        display: flex;
+        margin: 10px 0;
+        span {
+          flex: 0.4;
+          color: $color-grey;
+        &.popup-data {
+          color: $color-dark-grey;
+          &.department {
+            text-transform: uppercase;
+          }
+          &.semester {
+            text-transform: capitalize;
+          }
+        }
+      }
+      }
+    }
+  }
+}
